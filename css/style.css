@@ -78,15 +78,19 @@
     
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .gallery-title {
         font-size: 3rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .gallery-title {
         font-size: 2rem;
+    }
+
+    .gallery-item figcaption {
+        font-size: .9rem;
     }
 }
 
@@ -105,13 +109,15 @@
 /* Grid container */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    /* more forgiving + auto-fit */
     gap: 20px;
-    /* space between images */
     padding: 20px;
     max-width: 1200px;
+    /* <- use max-width + width for broader support */
+    width: 100%;
     margin: 0 auto;
-    /* center the grid */
+    justify-content: center;
 }
 
 /* Tablets */
@@ -119,14 +125,16 @@
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 15px;
+        justify-content: center;
     }
 }
 
-@media (max-width: 480px) {
+/* phones */
+@media (max-width: 600px) {
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 10px;
-        padding: 10px;
+        gap: 12px;
+        padding: 12px;
     }
 }
 
@@ -264,6 +272,13 @@
     background-color: #d20909;
 }
 
+@media (max-width: 600px) {
+    .back-button .btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+}
+
 html,
 body {
     height: 100%;
@@ -274,6 +289,7 @@ body {
     background: linear-gradient(45deg, #2196F3 0%, #0D47A1 100%);
         background-size: 200% 200%;
         animation: bg-shift 6s ease infinite;
+        min-height: 100dvh;
 }
 
 @keyframes bg-shift {
