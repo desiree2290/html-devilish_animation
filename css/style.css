@@ -129,20 +129,23 @@
     }
 }
 
-/* phones */
+/* phones: exactly 3 columns */
 @media (max-width: 600px) {
     .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        padding: 12px;
-        justify-content: center;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        /* 3 equal tracks */
+        gap: 8px;
+        /* smaller gaps so 3 columns fit */
+        padding: 8px;
+        /* smaller padding so columns have room */
+        justify-items: center;
+        /* center each item in its cell */
     }
-}
 
 /* Make all images uniform */
 .gallery-grid img {
     width: 100%;
-    height: 100%;
+    height: auto;
     /* same height for all images */
     object-fit: contain;
     background: white;
