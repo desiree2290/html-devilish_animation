@@ -1,0 +1,245 @@
+/* Center the carousel in the middle of the page */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    /* adjust height so it centers vertically */
+}
+
+/* Style the carousel images */
+.carousel-inner img {
+    border: 3px solid #333;
+    /* dark border around images */
+    border-radius: 10px;
+    /* rounded corners */
+    margin: 0 auto;
+    /* centers image horizontally */
+    max-width: 400px;
+    /* keeps images from being too large */
+    height: auto;
+    /* keeps aspect ratio */
+}
+
+/* Change the next/previous button icons to black */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+    /* turns the default white icons black */
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.architects-daughter-regular {
+    font-family: "Architects Daughter", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.gloria-hallelujah-regular {
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.mynerve-regular {
+    font-family: "Mynerve", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Style the gallery title */
+.gallery-title {
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    margin: 20px 0;
+    font-size: 5rem;
+    animation: bounce 2s infinite;
+    color: #ffeb3b;
+        -webkit-text-stroke: 2px #333;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5), 0 0 15px #2196F3;
+    
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Grid container */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    /* space between images */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* center the grid */
+}
+
+/* Make all images uniform */
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    /* same height for all images */
+    object-fit: contain;
+    background: white;
+    /* crops nicely to fit */
+    border: 2px solid #333;
+    /* optional border */
+    border-radius: 8px;
+    /* slightly rounded corners */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    /* subtle shadow */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    /* zoom slightly */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* center caption + image */
+    text-align: center;
+    /* center text */
+}
+
+.gallery-item figcaption {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    /* adjust size */
+    font-weight: bold;
+    /* make it bold */
+    color: #fff;
+    /* caption color */
+    font-family: 'Gloria Hallelujah', cursive;
+    /* change font */
+    text-align: center;
+    /* alignment: left | right | center */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    /* optional glow for readability */
+}
+
+/* Lightbox container (hidden by default) */
+.lightbox {
+    display: none;
+    /* hidden initially */
+    position: fixed;
+    /* stay in place */
+    z-index: 9999;
+    /* sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* semi-transparent background */
+}
+
+/* Lightbox image */
+.lightbox-content {
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    margin: 5% auto;
+    /* center vertically and horizontally */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Close button (X) */
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lightbox .close:hover {
+    color: #ff4c68;
+}
+
+.back-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-button .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #01070d;
+    /* Bootstrap blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Gloria Hallelujah', cursive;
+    transition: background 0.3s ease;
+}
+
+.back-button .btn:hover {
+    background-color: #d20909;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.gallery-background {
+    background: linear-gradient(45deg, #2196F3 0%, #0D47A1 100%);
+        background-size: 200% 200%;
+        animation: bg-shift 6s ease infinite;
+}
+
+@keyframes bg-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
