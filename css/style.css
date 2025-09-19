@@ -287,15 +287,22 @@
 
 html,
 body {
-    height: 100%;
     margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    /* prevent horizontal scrollbars */
 }
 
 .gallery-background {
     background: linear-gradient(45deg, #2196F3 0%, #0D47A1 100%);
-        background-size: 200% 200%;
-        animation: bg-shift 6s ease infinite;
-        min-height: 100dvh;
+    background-size: 200% 200%;
+    animation: bg-shift 6s ease infinite;
+    min-height: 100vh;
+    /* full height */
+    width: 100%;
+    /* full width */
+    box-sizing: border-box;
 }
 
 @keyframes bg-shift {
