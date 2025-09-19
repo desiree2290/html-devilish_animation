@@ -141,7 +141,7 @@
         justify-items: center;
         /* center each item in its cell */
     }
-
+}
 /* Make all images uniform */
 .gallery-grid img {
     width: 100%;
