@@ -274,34 +274,35 @@
             <!-- keep going until all 32 are added -->
         </div>
     </div>
+    <script>
+        // Get the lightbox
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".lightbox .close");
+
+        // Add click event to all gallery images
+        document.querySelectorAll(".gallery-grid img").forEach(img => {
+            img.addEventListener("click", () => {
+                lightbox.style.display = "block";
+                lightboxImg.src = img.src;
+            });
+        });
+
+        // Close when clicking the X
+        closeBtn.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+
+        // Close when clicking outside the image
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+            }
+        });
+    </script>
 </body>
 
-<script>
-    // Get the lightbox
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeBtn = document.querySelector(".lightbox .close");
 
-    // Add click event to all gallery images
-    document.querySelectorAll(".gallery-grid img").forEach(img => {
-        img.addEventListener("click", () => {
-            lightbox.style.display = "block";
-            lightboxImg.src = img.src;
-        });
-    });
-
-    // Close when clicking the X
-    closeBtn.addEventListener("click", () => {
-        lightbox.style.display = "none";
-    });
-
-    // Close when clicking outside the image
-    lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-            lightbox.style.display = "none";
-        }
-    });
-</script>
 
 
 </html>
