@@ -134,9 +134,9 @@
     .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
         /* 3 equal tracks */
-        gap: 8px;
+        gap: 4px;
         /* smaller gaps so 3 columns fit */
-        padding: 8px;
+        padding: 4px;
         /* smaller padding so columns have room */
         align-items: stretch;
             /* make tiles fill cells */
